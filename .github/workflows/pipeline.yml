@@ -42,8 +42,8 @@ jobs:
       - uses: actions/checkout@v2 # Can't tag without checking out again
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.33.0
-        default_bump: patch
         env:
+          DEFAULT_BUMP: patch
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy to heroku
